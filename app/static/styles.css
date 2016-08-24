@@ -5,6 +5,9 @@
     min-height: 260px;
     margin-left: 280px;
 }
+textarea.flask-pagedown-input {
+    min-height:100px;
+}
 @media screen and (max-width: 400px) {
     .profile-header {
         min-height: 260px;
