@@ -8,6 +8,11 @@
 <div class="page-header">
     <h1>Hello, {% if current_user.is_authenticated %}{{ current_user.username }}{% else %}陌生人~{% endif %}!</h1>
 </div>
+<div class="container-mplayer">
+    <div class="music"></div>
+</div>
+<script src="../static/meplayer.min.js"></script>
+<script src="../static/main.js"></script>
 <div class="page-post">
     {% if current_user.can(Permission.WRITE_ARTICLES) %}
     {{ wtf.quick_form(form) }}
