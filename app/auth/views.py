@@ -94,7 +94,8 @@ def change_password():
         if current_user.verify_password(form.old_password.data):
             current_user.password = form.password.data
             db.session.add(current_user)
-            flash('Your password has been updated.')
+            db.session.commit()
+            flash(u'你的密码已更新')
             return redirect(url_for('main.index'))
         else:
             flash('Invalid password.')
@@ -114,8 +115,7 @@ def password_reset_request():
                        'auth/email/reset_password',
                        user=user, token=token,
                        next=request.args.get('next'))
-        flash('An email with instructions to reset your password has been '
-              'sent to you.')
+        flash(u'更改密码的邮件已发送')
         return redirect(url_for('auth.login'))
     return render_template('auth/reset_password.html', form=form)
 
@@ -130,7 +130,7 @@ def password_reset(token):
         if user is None:
             return redirect(url_for('main.index'))
         if user.reset_password(token, form.password.data):
-            flash('Your password has been updated.')
+            flash(u'你的密码已更新')
             return redirect(url_for('auth.login'))
         else:
             return redirect(url_for('main.index'))
@@ -148,8 +148,7 @@ def change_email_request():
             send_email(new_email, 'Confirm your email address',
                        'auth/email/change_email',
                        user=current_user, token=token)
-            flash('An email with instructions to confirm your new email '
-                  'address has been sent to you.')
+            flash(u'更改密码的邮件已发送')
             return redirect(url_for('main.index'))
         else:
             flash('Invalid email or password.')
@@ -160,7 +159,7 @@ def change_email_request():
 @login_required
 def change_email(token):
     if current_user.change_email(token):
-        flash('Your email address has been updated.')
+        flash(u'你的邮件地址已更新')
     else:
         flash('Invalid request.')
     return redirect(url_for('main.index'))
