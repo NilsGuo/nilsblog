@@ -7,15 +7,15 @@ from ..models import User
 
 
 class LoginForm(Form):
-    email = StringField('Email', validators=[Required(), Length(1, 64),
+    email = StringField(u'邮箱', validators=[Required(), Length(1, 64),
                                              Email()])
-    password = PasswordField('Password', validators=[Required()])
+    password = PasswordField(u'密码', validators=[Required()])
     remember_me = BooleanField(u'下次保持登录')
     submit = SubmitField(u'登录')
 
 
 class RegistrationForm(Form):
-    email = StringField('Email', validators=[Required(), Length(1, 64),
+    email = StringField(u'邮箱', validators=[Required(), Length(1, 64),
                                            Email()])
     username = StringField(u'用户名', validators=[
         Required(), Length(1, 64), Regexp('^[A-Za-z][A-Za-z0-9_.]*$', 0,
@@ -43,13 +43,13 @@ class ChangePasswordForm(Form):
 
 
 class PasswordResetRequestForm(Form):
-    email = StringField('Email', validators=[Required(), Length(1, 64),
+    email = StringField(u'邮箱', validators=[Required(), Length(1, 64),
                                              Email()])
     submit = SubmitField(u'重置密码')
 
 
 class PasswordResetForm(Form):
-    email = StringField('Email', validators=[Required(), Length(1, 64),
+    email = StringField(u'邮箱', validators=[Required(), Length(1, 64),
                                              Email()])
     password = PasswordField(u'新密码', validators=[
         Required(), EqualTo('password2', message=u'密码必须一致')])

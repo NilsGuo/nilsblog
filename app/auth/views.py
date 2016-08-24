@@ -35,7 +35,7 @@ def login():
         if user is not None and user.verify_password(form.password.data):
             login_user(user, form.remember_me.data)
             return redirect(request.args.get('next') or url_for('main.index'))
-        flash('Invalid username or password.')
+        flash(u'用户名或密码错误')
     return render_template('auth/login.html', form=form)
 
 
@@ -43,7 +43,7 @@ def login():
 @login_required
 def logout():
     logout_user()
-    flash('You have been logged out.')
+    flash(u'你已登出')
     return redirect(url_for('main.index'))
 
 
@@ -59,7 +59,7 @@ def register():
         token = user.generate_confirmation_token()
         send_email(user.email, 'Confirm Your Account',
                    'auth/email/confirm', user=user, token=token)
-        flash('A confirmation email has been sent to you by email.')
+        flash(u'一封确认邮件已发送到你的邮箱')
         return redirect(url_for('auth.login'))
     return render_template('auth/register.html', form=form)
 
@@ -72,7 +72,7 @@ def confirm(token):
     if current_user.confirm(token):
         flash(u'你已验证账户，谢谢！')
     else:
-        flash('The confirmation link is invalid or has expired.')
+        flash(u'认证地址不可用，或者已过期')
     return redirect(url_for('main.index'))
 
 
