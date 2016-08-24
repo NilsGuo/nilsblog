@@ -3,7 +3,13 @@
 }
 .profile-header {
     min-height: 260px;
-    margin-left: 240px;
+    margin-left: 280px;
+}
+@media screen and (max-width: 400px) {
+    .profile-header {
+        min-height: 260px;
+        margin-left: 200px;
+}
 }
 div.post-tabs {
     margin-top: 16px;
