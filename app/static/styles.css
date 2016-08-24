@@ -24,6 +24,10 @@ ul.posts {
     margin: 16px 0px 0px 0px;
     border-top: 1px solid #e0e0e0;
 }
+li.post {
+    max-height: 380px;
+    overflow: auto;
+}
 div.post-tabs ul.posts {
     margin: 0px;
     border-top: none;
