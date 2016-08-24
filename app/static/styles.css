@@ -12,10 +12,10 @@
 }
 }
 div.post-tabs {
-    margin-top: 20px;
+    margin-top: 28px;
 }
 div.page-post {
-    margin-top: 22px;
+    margin-top: 28px;
     font-size: 18px;
 }
 ul.posts {
@@ -115,3 +115,17 @@ div.flask-pagedown-preview h3 {
 .table.followers tr {
     border-bottom: 1px solid #e0e0e0;
 }
+/*meplayer*/
+.container-meplayer {
+    width: 400px;
+    margin: 120px auto 0;
+}
+
+.meplayer-container-mini {
+    margin: 0 auto;
+}
+
+.meplayer-container {
+    margin: 0 auto;
+}
+
