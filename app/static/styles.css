@@ -8,6 +8,12 @@
 textarea.flask-pagedown-input {
     min-height:100px;
 }
+div.container {
+    margin-top: 0px;
+}
+iframe {
+    margin-top: 20px;
+}
 @media screen and (max-width: 400px) {
     .profile-header {
         min-height: 260px;
@@ -133,6 +139,6 @@ div.flask-pagedown-preview h3 {
 }
 
 .meplayer-container {
-    margin: 0 auto;
+    margin: 56px;
 }
 

@@ -6,30 +6,39 @@
 
 {% block page_content %}
 <div class="page-header">
-    <h1>Hello, {% if current_user.is_authenticated %}{{ current_user.username }}{% else %}陌生人~{% endif %}!</h1>
+    <h1>Hello, {% if current_user.is_authenticated %}{{ current_user.username }}{% else %}Stranger{% endif %}!</h1>
 </div>
-<div class="container-mplayer">
-    <div class="music"></div>
-</div>
-<script src="../static/meplayer.min.js"></script>
-<script src="../static/main.js"></script>
-<div class="page-post">
-    {% if current_user.can(Permission.WRITE_ARTICLES) %}
-    {{ wtf.quick_form(form) }}
-    {% endif %}
-</div>
-<div class="post-tabs">
-    <ul class="nav nav-tabs">
-        <li{% if not show_followed %} class="active"{% endif %}><a href="{{ url_for('.show_all') }}">全部</a></li>
-        {% if current_user.is_authenticated %}
-        <li{% if show_followed %} class="active"{% endif %}><a href="{{ url_for('.show_followed') }}">关注</a></li>
-        {% endif %}
-    </ul>
-    {% include '_posts.html' %}
-</div>
-{% if pagination %}
-<div class="pagination">
-    {{ macros.pagination_widget(pagination, '.index') }}
+<div class="container">
+    <div class="col-md-4">
+        <div class="container-mplayer">
+            <div class="music"></div>
+            <script src="../static/meplayer.min.js"></script>
+            <script src="../static/main.js"></script>
+        </div>
+        <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=1&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=1830439201&verifier=7c9f6081&dpc=1"></iframe>
+    </div>
+    <div class="col-md-8">
+        <div>
+            <div class="page-post">
+                {% if current_user.can(Permission.WRITE_ARTICLES) %}
+                {{ wtf.quick_form(form) }}
+                {% endif %}
+            </div>
+        </div>
+        <div class="post-tabs">
+            <ul class="nav nav-tabs">
+                <li{% if not show_followed %} class="active"{% endif %}><a href="{{ url_for('.show_all') }}">All</a></li>
+                {% if current_user.is_authenticated %}
+                <li{% if show_followed %} class="active"{% endif %}><a href="{{ url_for('.show_followed') }}">Followers</a></li>
+                {% endif %}
+            </ul>
+            {% include '_posts.html' %}
+        </div>
+        {% if pagination %}
+        <div class="pagination">
+            {{ macros.pagination_widget(pagination, '.index') }}
+        </div>
+    </div>
 </div>
 {% endif %}
 {% endblock %}
