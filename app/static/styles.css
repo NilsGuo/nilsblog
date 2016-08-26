@@ -21,6 +21,10 @@ iframe {
         margin-left: 200px;
 }
 }
+div.post {
+    box-shadow: 5px 5px 20px #CCC;
+    margin-bottom: 10px;
+}
 div.post-tabs {
     margin-top: 28px;
 }
