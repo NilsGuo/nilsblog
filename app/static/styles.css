@@ -21,6 +21,9 @@ iframe {
         margin-left: 200px;
 }
 }
+div.frame {
+    padding-left: 0px;
+}
 div.post {
     box-shadow: 5px 5px 20px #CCC;
     margin-bottom: 10px;
