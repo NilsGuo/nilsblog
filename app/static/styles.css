@@ -163,4 +163,12 @@ div.flask-pagedown-preview h3 {
     height:630px;
     margin-top:50px;
 }
-
+@media screen and (max-width: 750px) {
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    width: 100%;
+    margin: auto;
+    height:500px;
+    margin-top:50px;
+}
+}
