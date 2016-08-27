@@ -21,6 +21,11 @@ iframe {
         margin-left: 200px;
 }
 }
+div.page-header{
+    margin-top: 65px;
+    padding-bottom: 4px;
+    margin-bottom: 10px;
+}
 div.post {
     box-shadow: 5px 5px 20px #CCC;
     margin-bottom: 10px;
@@ -144,6 +149,11 @@ div.flask-pagedown-preview h3 {
 }
 
 .meplayer-container {
-    margin-top: 56px;
+    margin-top: 58px;
+}
+@media screen and (max-width: 1000px) {
+    .meplayer-container {
+    margin-top: 30px;
+}
 }
 
