@@ -6,6 +6,9 @@
     min-height: 260px;
     margin-left: 280px;
 }
+div.myCarousel {
+    margin-top: 50px;
+}
 div.body-container{
     margin-top: 70px;
 }
