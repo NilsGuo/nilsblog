@@ -6,9 +6,7 @@
     min-height: 260px;
     margin-left: 280px;
 }
-div.myCarousel {
-    margin-top: 50px;
-}
+
 div.body-container{
     margin-top: 70px;
 }
@@ -196,8 +194,12 @@ div.flask-pagedown-preview h3 {
     margin-top: 58px;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1024px) {
     .meplayer-container {
     margin-top: 30px;
 }
+    #carousel_img {
+    height: 540px;
 }
+}
+
