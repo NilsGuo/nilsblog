@@ -60,7 +60,7 @@
     {% elif if_homepage %} class="disabled"
     {% else %} class="container body-container" {% endif %}>
     {% for message in get_flashed_messages() %}
-    <div class="alert alert-warning">
+    <div class="alert alert-warning fade in">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
         {{ message }}
     </div>
