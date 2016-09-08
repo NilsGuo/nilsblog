@@ -59,7 +59,6 @@ ul.posts {
 }
 
 li.post {
-    max-height: 380px;
     overflow: auto;
 }
 
